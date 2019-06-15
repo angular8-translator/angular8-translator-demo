@@ -18,6 +18,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-translator": [
+        "dist/angular-translator"
+      ],
+      "angular-translator/*": [
+        "dist/angular-translator/*"
+      ]
+    }
   }
 }

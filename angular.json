@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "previciencia": {
+    "angulartranslatordemo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/previciencia",
+            "outputPath": "dist/angulartranslatordemo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.sass"
             ],
             "scripts": []
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "previciencia:build"
+            "browserTarget": "angulartranslatordemo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "previciencia:build:production"
+              "browserTarget": "angulartranslatordemo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "previciencia:build"
+            "browserTarget": "angulartranslatordemo:build"
           }
         },
         "test": {
@@ -110,15 +111,51 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "previciencia:serve"
+            "devServerTarget": "angulartranslatordemo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "previciencia:serve:production"
+              "devServerTarget": "angulartranslatordemo:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "previciencia"
+    },
+    "angular-translator": {
+      "projectType": "library",
+      "root": "projects/angular-translator",
+      "sourceRoot": "projects/angular-translator/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-translator/tsconfig.lib.json",
+            "project": "projects/angular-translator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-translator/src/test.ts",
+            "tsConfig": "projects/angular-translator/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-translator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-translator/tsconfig.lib.json",
+              "projects/angular-translator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angulartranslatordemo"
 }

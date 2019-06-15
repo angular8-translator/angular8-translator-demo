@@ -1,0 +1,14 @@
+<ui-layout [title]='t.string.APP_NAME'>
+    <h2>{{t.string.WELCOME}}</h2>
+    <mat-form-field>
+        <mat-label>{{t.string.LANGUAGE}}</mat-label>
+        <mat-select [(ngModel)]='t.language'>
+          <mat-option value="pt">
+            Português (Brasil)
+          </mat-option>
+          <mat-option value="en">
+            Inglês
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</ui-layout>

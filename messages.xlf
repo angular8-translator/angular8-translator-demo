@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="cfaec9fbcc1262c9d882425e6a19cbaca4223724" datatype="html">
+        <source>Seja Bem Vindo ao PREVICIÊNCIA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">A welcome message</note>
+        <note priority="1" from="meaning">Site body</note>
+      </trans-unit>
+      <trans-unit id="e335b74d5e3d949784a1e38f6abc860ddf2f2db3" datatype="html">
+        <source>Previciência</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
