@@ -1,13 +1,115 @@
-<ui-layout [title]='t.string.APP_NAME'>
-    <h2>{{t.string.WELCOME}}</h2>
-    <mat-form-field>
+<ng-template #header_left>
+  <i class="fas fa-bars"></i>
+</ng-template>
+
+<ng-template #header_center>
+  {{t.string.APP_NAME}}
+</ng-template>
+
+<ng-template #header_right>
+  <span class='flag-icon flag-icon-es' title='Español' 
+        [ngClass]='{ "selected-flag": t.language === languages.Spanish }' 
+        (click)='t.language = languages.Spanish'></span>
+
+  <span class='flag-icon flag-icon-gb' title='English' 
+        [ngClass]='{ "selected-flag": t.language === languages.English }' 
+        (click)='t.language = languages.English'></span>
+
+  <span class='flag-icon flag-icon-fr' title='Français' 
+        [ngClass]='{ "selected-flag": t.language === languages.French }' 
+        (click)='t.language = languages.French'></span>
+
+  <span class='flag-icon flag-icon-de' title='Deutsch' 
+        [ngClass]='{ "selected-flag": t.language === languages.German }' 
+        (click)='t.language = languages.German'></span>
+
+  <span class='flag-icon flag-icon-br' title='Português' 
+        [ngClass]='{ "selected-flag": t.language === languages.Portuguese }' 
+        (click)='t.language = languages.Portuguese'></span>
+        
+  <span class='flag-icon flag-icon-jp' title='日本語' 
+        [ngClass]='{ "selected-flag": t.language === languages.Japanese }' 
+        (click)='t.language = languages.Japanese'></span>
+</ng-template>
+
+<ng-template #footer_left>
+  <i class="fab fa-twitter"></i>
+  <i class="fab fa-linkedin"></i>
+  <i class="fab fa-medium"></i>
+</ng-template>
+
+<ng-template #footer_center>
+  Copyright <i class="far fa-copyright"></i> CRUZ JR, 2019
+</ng-template>
+
+<ng-template #footer_right>
+  All rights are reserved.
+</ng-template>
+
+<ui-layout [headerLeft]='header_left' [headerCenter]='header_center' [headerRight]='header_right'
+  [footerLeft]='footer_left' [footerCenter]='footer_center' [footerRight]='footer_right'>
+  <h2>{{t.string.WELCOME}}</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Dictum varius duis at consectetur lorem. Imperdiet massa tincidunt nunc pulvinar. Auctor eu augue ut lectus.
+    Cursus risus at ultrices mi tempus imperdiet. Faucibus turpis in eu mi bibendum. Venenatis urna cursus eget nunc.
+    Vestibulum lorem sed risus ultricies tristique nulla. Viverra nibh cras pulvinar mattis nunc sed blandit libero.
+    Nisi quis eleifend quam adipiscing vitae. Velit laoreet id donec ultrices. Interdum velit euismod in pellentesque
+    massa placerat duis ultricies lacus. Vitae elementum curabitur vitae nunc sed velit. Et tortor consequat id porta
+    nibh. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Convallis posuere morbi leo urna molestie at.
+  </p>
+
+  <p>Vitae turpis massa sed elementum tempus egestas. Sit amet justo donec enim diam vulputate. Urna et pharetra
+    pharetra massa massa ultricies mi quis hendrerit. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Ut
+    ornare lectus sit amet est placerat in. Bibendum ut tristique et egestas quis ipsum suspendisse. Dolor sit amet
+    consectetur adipiscing elit. Aliquam id diam maecenas ultricies mi eget mauris pharetra. Pharetra massa massa
+    ultricies mi quis hendrerit. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Enim sed
+    faucibus turpis in. Tellus id interdum velit laoreet. Massa tempor nec feugiat nisl pretium. Eget felis eget nunc
+    lobortis. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Sapien nec sagittis aliquam
+    malesuada bibendum arcu vitae elementum curabitur. Ut faucibus pulvinar elementum integer enim neque. Velit sed
+    ullamcorper morbi tincidunt ornare massa eget egestas purus. Pellentesque massa placerat duis ultricies lacus sed
+    turpis tincidunt. Nunc sed velit dignissim sodales.</p>
+
+  <p>Odio euismod lacinia at quis risus sed vulputate. Lorem mollis aliquam ut porttitor. Egestas erat imperdiet sed
+    euismod nisi porta lorem mollis. Pellentesque id nibh tortor id aliquet lectus proin. Id nibh tortor id aliquet
+    lectus proin nibh nisl condimentum. Purus sit amet volutpat consequat mauris nunc congue. Pellentesque eu tincidunt
+    tortor aliquam nulla facilisi. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Velit scelerisque in
+    dictum non consectetur a erat. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Pellentesque elit
+    eget gravida cum sociis natoque penatibus. Tristique nulla aliquet enim tortor at. Nunc sed velit dignissim sodales
+    ut eu sem.<p>
+
+      <p>Augue ut lectus arcu bibendum at varius. Mi proin sed libero enim sed faucibus turpis in eu. Suspendisse
+        ultrices gravida dictum fusce ut. Nibh sit amet commodo nulla facilisi nullam. Nibh tellus molestie nunc non
+        blandit massa enim nec. Purus sit amet volutpat consequat mauris. At imperdiet dui accumsan sit amet nulla
+        facilisi morbi tempus. Blandit massa enim nec dui nunc mattis enim ut tellus. Porta nibh venenatis cras sed
+        felis. Porttitor rhoncus dolor purus non enim praesent. Vitae semper quis lectus nulla at volutpat. Cursus vitae
+        congue mauris rhoncus aenean vel elit scelerisque. Facilisis leo vel fringilla est ullamcorper eget. Lectus
+        nulla at volutpat diam ut venenatis tellus in. Est ultricies integer quis auctor elit sed vulputate.</p>
+
+      <p>Quam id leo in vitae turpis massa. Fames ac turpis egestas integer eget aliquet. Convallis a cras semper auctor
+        neque vitae tempus quam pellentesque. Turpis egestas maecenas pharetra convallis posuere morbi leo. Tristique et
+        egestas quis ipsum suspendisse ultrices gravida dictum fusce. Pretium lectus quam id leo in vitae turpis. A
+        scelerisque purus semper eget. Nunc pulvinar sapien et ligula. Arcu risus quis varius quam quisque id. Porta
+        nibh venenatis cras sed felis eget velit.</p>
+      <mat-form-field>
         <mat-label>{{t.string.LANGUAGE}}</mat-label>
-        <mat-select [(ngModel)]='t.language'>
-          <mat-option value="pt">
+        <mat-select [(ngModel)]='t.language' color='accent'>
+          <mat-option [value]="languages.Spanish">
+            Español
+          </mat-option>
+          <mat-option [value]="languages.English">
+            English
+          </mat-option>
+          <mat-option [value]="languages.French">
+            Français
+          </mat-option>
+          <mat-option [value]="languages.German">
+            Deutsch
+          </mat-option>
+          <mat-option [value]="languages.Portuguese">
             Português (Brasil)
           </mat-option>
-          <mat-option value="en">
-            Inglês
+          <mat-option [value]="languages.Japanese">
+            日本語
           </mat-option>
         </mat-select>
       </mat-form-field>

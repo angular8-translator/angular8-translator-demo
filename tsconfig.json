@@ -25,6 +25,12 @@
       ],
       "angular-translator/*": [
         "dist/angular-translator/*"
+      ],
+      "@cruzjr/ui": [
+        "dist/cruzjr/ui"
+      ],
+      "@cruzjr/ui/*": [
+        "dist/cruzjr/ui/*"
       ]
     }
   }

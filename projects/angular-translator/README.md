@@ -1,24 +1,72 @@
-# Angulartranslator
+# Angular8-translator
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-## Code scaffolding
+## Introduction
 
-Run `ng generate component component-name --project angular-translator` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-translator`.
-> Note: Don't forget to add `--project angular-translator` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
 
-Run `ng build angular-translator` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Setup
 
-## Publishing
+1- Install this library on your project: `npm install --save angular8-translator`
 
-After building your library with `ng build angular-translator`, go to the dist folder `cd dist/angular-translator` and run `npm publish`.
 
-## Running unit tests
+2- Import the `AngularTranslatorModule` on your app.module.ts:
 
-Run `ng test angular-translator` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+
+```
+import { AngularTranslatorModule } from 'angular8-translator';
+[...]
+@NgModule({
+    [...]
+    imports: [
+        [...]
+        AngularTranslatorModule,
+    ]
+]
+```
+
+
+## Geting Started
+
+
+3- Import `AngularTranslatorService`, set your default language and additional language options
+
+
+```
+import { Component, OnInit } from '@angular/core';
+import { AngularTranslatorService, Language } from 'angular8-translator';
+
+@Component({
+  selector: 'app-home-page',
+  template: '<div> <h1> {{ t.string.WELCOME }} </h1> </div>',
+})
+export class HomePageComponent implements OnInit {
+  constructor(
+    public t: AngularTranslatorService,
+  ) {
+    const en = { WELCOME: "Welcome" };
+    const pt = { WELCOME: "Bem Vindo" };
+    const es = { WELCOME: "Bienvenida" };
+    const fr = { WELCOME: "Bienvenue" };
+    const de = { WELCOME: "Herzlich willkommen"};
+
+    t.setDefaultLanguage(en);
+    t.setLanguageOption(Language.English, en);
+    t.setLanguageOption(Language.Portuguese, pt);
+    t.setLanguageOption(Language.Spanish, es);
+    t.setLanguageOption(Language.French, fr);
+    t.setLanguageOption(Language.German, de);
+  }
+}
+
+```
+
+## JSON files
+
+You can to import JSON files with translations and set to `AngularTranslatorService`.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular8-translator, you are welcome to register issue [here](https://github.com/angular8-translator/angular8-translator/issues).

@@ -1,0 +1,55 @@
+<ng-template #nothing>
+
+</ng-template>
+
+<div class='root'>
+  <mat-toolbar color='primary'>
+    <mat-toolbar-row>
+      <div id='header-left'>
+        <div class='header-left' *ngIf='headerLeft'>
+          <ng-container *ngTemplateOutlet='headerLeft'></ng-container>
+        </div>
+      </div>
+
+      <span class="spacer"></span>
+
+      <div class='header-center' *ngIf='headerCenter'>
+        <ng-container *ngTemplateOutlet='headerCenter'></ng-container>
+      </div>
+
+      <span class="spacer"></span>
+
+      <div id='header-right'>
+        <div class='header-right' *ngIf='headerRight'>
+          <ng-container *ngTemplateOutlet='headerRight'></ng-container>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class='background spacer'>
+    <ng-content></ng-content>
+  </div>
+  <mat-toolbar color='primary'>
+    <mat-toolbar-row>
+      <div id='footer-left'>
+        <div class='footer-left' *ngIf='footerLeft'>
+          <ng-container *ngTemplateOutlet='footerLeft'></ng-container>
+        </div>
+      </div>
+
+      <span class="spacer"></span>
+
+      <div class='footer-center' *ngIf='footerCenter'>
+        <ng-container *ngTemplateOutlet='footerCenter'></ng-container>
+      </div>
+
+      <span class="spacer"></span>
+
+      <div id='footer-right'>
+        <div class='footer-right' *ngIf='footerRight'>
+          <ng-container *ngTemplateOutlet='footerRight'></ng-container>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

@@ -155,6 +155,41 @@
           }
         }
       }
+    },
+    "@cruzjr/ui": {
+      "projectType": "library",
+      "root": "projects/cruzjr/ui",
+      "sourceRoot": "projects/cruzjr/ui/src",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cruzjr/ui/tsconfig.lib.json",
+            "project": "projects/cruzjr/ui/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cruzjr/ui/src/test.ts",
+            "tsConfig": "projects/cruzjr/ui/tsconfig.spec.json",
+            "karmaConfig": "projects/cruzjr/ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cruzjr/ui/tsconfig.lib.json",
+              "projects/cruzjr/ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angulartranslatordemo"
